@@ -21,7 +21,7 @@ function copyPixels(
   destX: number,
   destY: number
 ) {
-  srcImage.scan(srcX, srcY, srcW, srcH, (curSrcX, curSrcY, curSrcIndex) => {
+  srcImage.scan(srcX, srcY, srcW, srcH, (curSrcX: number, curSrcY: number, curSrcIndex: number) => {
     const curDestX = destX + (curSrcX - srcX);
     const curDestY = destY + (curSrcY - srcY);
     const curDestIndex = destImage.getPixelIndex(curDestX, curDestY);
@@ -54,7 +54,7 @@ function copyPixelToRect(
   destH: number
 ) {
   const srcIndex = srcImage.getPixelIndex(srcX, srcY);
-  destImage.scan(destX, destY, destW, destH, (curDestX, curDestY, curDestIndex) => {
+  destImage.scan(destX, destY, destW, destH, (curDestX: number, curDestY: number, curDestIndex: number) => {
     destImage.bitmap.data[curDestIndex + 0] = srcImage.bitmap.data[srcIndex + 0];
     destImage.bitmap.data[curDestIndex + 1] = srcImage.bitmap.data[srcIndex + 1];
     destImage.bitmap.data[curDestIndex + 2] = srcImage.bitmap.data[srcIndex + 2];
