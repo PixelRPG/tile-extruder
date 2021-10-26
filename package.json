@@ -4,7 +4,7 @@
     "workspaces/*"
   ],
   "scripts": {
-    "build": "yarn workspace tile-extruder run build && yarn workspace gui run build"
+    "build": "npm run build -w tile-extruder -w gui"
   },
   "repository": {
     "type": "git",
